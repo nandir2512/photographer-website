@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+
+/*Since GitHub Pages hosts static files, it doesn't natively support standard Single Page Application routing (visiting yoursite.com/gallery directly will result in a 404 error). 
+The easiest and most reliable fix is to switch from BrowserRouter to HashRouter.
+(This will make your URLs look like yoursite.com/#/gallery, which routes perfectly on static hosting)*/
+
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';

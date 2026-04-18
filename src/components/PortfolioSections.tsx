@@ -135,7 +135,7 @@ function VerticalScrollingGallery({ images, speed = 20 }: { images: string[], sp
         {duplicatedImages.map((src, i) => (
           <div key={i} className="px-4 w-full">
             <img
-              src={src}
+              src={src.startsWith('/') ? `${import.meta.env.BASE_URL}${src.slice(1)}` : src}
               alt={`Gallery ${i}`}
               className="w-full aspect-[3/4.5] object-cover rounded-sm transition-all duration-700"
               referrerPolicy="no-referrer"

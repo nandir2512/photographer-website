@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+  --color-gold: #D4AF37;
+  --color-beige: #F5F5DC;
+
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* @apply font-sans bg-white text-black antialiased; */
+    @apply font-sans bg-stone-50 text-stone-900 antialiased overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+/* Glassmorphism & Depth Utilities */
+.glass-header {
+  @apply bg-black/10 backdrop-blur-sm border-b border-white/10;
+}
+
+.video-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+}
+
+/* Custom scrollbar */
+.video-overlay-darker {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(10, 10, 10, 0.8) 100%);
+}
+
+/* Premium Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-stone-100, #f5f5f4);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-stone-400, #a8a29e);
+  border-radius: 9999px;
+  transition: background-color 300ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-stone-500, #78716c);
+}
